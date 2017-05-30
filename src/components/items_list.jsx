@@ -38,6 +38,9 @@ class ItemsList extends Component {
         <button onClick={() => this.props.actionFetchData()}>
           Fetch new data
         </button>
+        <button onClick={() => this.props.actionAddItem()}>
+          Add New Item
+        </button>
         {this.renderItems()}
       </div>
     );

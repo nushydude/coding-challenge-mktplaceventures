@@ -1,6 +1,7 @@
 import {
   FETCH_DATA,
   REMOVE_ITEM,
+  ADD_ITEM,
 } from './../actions/types';
 
 const INITIAL_STATE = {
@@ -26,6 +27,11 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         items: state.items.filter(item => item.id !== action.payload)
                           .sort(sortByTimeDsc),
+      };
+    case ADD_ITEM:
+      return {
+        ...state,
+        items: state.items.concat(action.payload).sort(sortByTimeDsc),
       };
     default:
       return state;
