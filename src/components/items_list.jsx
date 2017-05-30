@@ -5,10 +5,25 @@ import moment from 'moment';
 
 import * as actions from './../actions';
 
+import ItemCategory from './item_category';
+
 class ItemsList extends Component {
 
   componentDidMount() {
     this.props.actionFetchData();
+  }
+
+  generateCategories() {
+    const categorised = this.props.items.reduce((categories, item) => {
+      const formattedTimestamp = moment(item.timestamp).format('YYYY-MM-DD');
+      if (!categories[formattedTimestamp]) {
+        categories[formattedTimestamp] = [];
+      }
+      categories[formattedTimestamp].push(item);
+      return categories;
+    }, {});
+
+    return categorised;
   }
 
   renderItems() {
@@ -16,6 +31,18 @@ class ItemsList extends Component {
       return <p>Loading...</p>;
     }
 
+    const categories = this.generateCategories();
+
+    const itemsList = Object.keys(categories).map(category => (
+      <ItemCategory
+        key={category}
+        title={category}
+        items={categories[category]}
+        funcRemoveItem={this.props.actionRemoveItem}
+      />
+    ));
+
+    /*
     const itemsList = (
       this.props.items.map(item => (
         <div key={item.id}>
@@ -27,6 +54,7 @@ class ItemsList extends Component {
         </div>
       ))
     );
+    */
 
     return itemsList;
   }
@@ -52,7 +80,16 @@ const mapStateToProps = state => ({
 });
 
 ItemsList.propTypes = {
-  items: PropTypes.array.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      timestamp: PropTypes.instanceOf(Date).isRequired,
+    }),
+  ).isRequired,
+  actionRemoveItem: PropTypes.func.isRequired,
+  actionAddItem: PropTypes.func.isRequired,
+  actionFetchData: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, actions)(ItemsList);

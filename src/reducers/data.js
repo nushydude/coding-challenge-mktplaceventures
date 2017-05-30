@@ -16,7 +16,7 @@ const sortByTimeDsc = (a, b) => {
     return 1;
   }
   return 0;
-}
+};
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -36,4 +36,4 @@ export default (state = INITIAL_STATE, action) => {
     default:
       return state;
   }
-}
+};
