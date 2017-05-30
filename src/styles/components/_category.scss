@@ -8,8 +8,23 @@
 .category__header {
   background: $light-grey;
   border-bottom: 1px solid $dark-grey;
+  display: flex;
+  justify-content: space-between;
   padding: ($space / 2) $space;
+
+  & p {
+    margin-bottom: 0;
+  }
+
+  & h3 {
+    margin-bottom: 0;
+  }
 }
 
 .category__body {
+}
+
+.category__stats {
+  color: $dark-grey;
+  font-style: italic;
 }

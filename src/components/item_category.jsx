@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FlipMove from 'react-flip-move';
 
 import Item from './item';
 
 const ItemCategory = props => (
   <div className="category">
-    <h3 className="category__header">{props.title}</h3>
+    <div className="category__header">
+      <h3>{props.title}</h3>
+      <p className="category__stats">{props.items.length} items</p>
+    </div>
     <div className="category__body">
-      {props.items.map(item => (
-        <Item
-          key={item.id}
-          item={item}
-          funcRemoveItem={props.funcRemoveItem}
-        />
-      ))}
+      <FlipMove maintainContainerHeight>
+        {props.items.map(item => (
+          <div className="item-wrapper" key={item.id}>
+            <Item
+              item={item}
+              funcRemoveItem={props.funcRemoveItem}
+            />
+          </div>
+        ))}
+      </FlipMove>
     </div>
   </div>
 );

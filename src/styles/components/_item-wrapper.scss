@@ -1,0 +1,10 @@
+/* Need this because FlipMove needs to wrap a
+   stateless class based component in a div or
+   something for it to work. This breaks
+   .item:nth-child(even) {...} */
+
+.item-wrapper {
+  &:nth-child(even) {
+    background: $very-light-grey;
+  }
+}

@@ -2,10 +2,6 @@
   display: flex;
   justify-content: space-between;
   padding: $space / 2;
-
-  &:nth-child(even) {
-    background: $very-light-grey;
-  }
 }
 
 .item__contents {
