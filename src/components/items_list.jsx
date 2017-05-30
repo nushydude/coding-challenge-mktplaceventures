@@ -21,6 +21,9 @@ class ItemsList extends Component {
         <div key={item.id}>
           <p>{item.name}</p>
           <p>{moment(item.timestamp).format('YYYY-MM-DD h:mm:ss a')}</p>
+          <button onClick={() => this.props.actionRemoveItem(item.id)}>
+            Remove
+          </button>
         </div>
       ))
     );
@@ -32,6 +35,9 @@ class ItemsList extends Component {
     return (
       <div>
         <h2>Items list</h2>
+        <button onClick={() => this.props.actionFetchData()}>
+          Fetch new data
+        </button>
         {this.renderItems()}
       </div>
     );

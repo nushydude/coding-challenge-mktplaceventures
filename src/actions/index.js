@@ -1,5 +1,6 @@
 import {
-  FETCH_DATA
+  FETCH_DATA,
+  REMOVE_ITEM
 } from './types';
 
 import generateData from './../libs/generateData';
@@ -15,5 +16,12 @@ export function actionFetchData() {
   return {
     type: FETCH_DATA,
     payload,
+  };
+}
+
+export function actionRemoveItem(id) {
+  return {
+    type: REMOVE_ITEM,
+    payload: id,
   };
 }
