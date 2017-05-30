@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 import Item from './item';
 
 const ItemCategory = props => (
-  <div>
-    <h3>{props.title}</h3>
-    {props.items.map(item => (
-      <Item
-        key={item.id}
-        item={item}
-        funcRemoveItem={props.funcRemoveItem}
-      />
-    ))}
+  <div className="category">
+    <h3 className="category__header">{props.title}</h3>
+    <div className="category__body">
+      {props.items.map(item => (
+        <Item
+          key={item.id}
+          item={item}
+          funcRemoveItem={props.funcRemoveItem}
+        />
+      ))}
+    </div>
   </div>
 );
 

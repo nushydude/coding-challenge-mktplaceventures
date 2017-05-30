@@ -1,0 +1,15 @@
+.header {
+  background-color: $header-bg;
+  color: $header-color;
+  width: 100%;
+}
+
+.header__content {
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: $max-width;
+  height: 10 * $space;
+  justify-content: space-between;
+  padding: 0 ($space * 2);
+}

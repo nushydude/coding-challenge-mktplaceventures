@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 const Item = ({ item, funcRemoveItem }) => (
-  <div key={item.id}>
-    <p>{item.name}</p>
-    <p>{moment(item.timestamp).format('YYYY-MM-DD h:mm:ss a')}</p>
-    <button onClick={() => funcRemoveItem(item.id)}>
-      Remove
-    </button>
+  <div className="item" key={item.id}>
+    <div className="item__contents">
+      <p>{moment(item.timestamp).format('hh:mm:ss a')}</p>
+      <p>{item.name}</p>
+    </div>
+    <div className="item__actions">
+      <button className="button button--icon" onClick={() => funcRemoveItem(item.id)}>
+        X
+      </button>
+    </div>
   </div>
 );
 

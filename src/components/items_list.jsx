@@ -51,11 +51,10 @@ class ItemsList extends Component {
   render() {
     return (
       <div>
-        <h2>Items list</h2>
-        <button onClick={() => this.props.actionFetchData()}>
+        <button className="button button--m-right" onClick={() => this.props.actionFetchData()}>
           Fetch new data
         </button>
-        <button onClick={() => this.props.actionAddItem()}>
+        <button className="button" onClick={() => this.props.actionAddItem()}>
           Add New Item
         </button>
         {this.renderItems()}

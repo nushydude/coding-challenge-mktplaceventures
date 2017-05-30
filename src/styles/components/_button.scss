@@ -1,0 +1,29 @@
+.button {
+  background: $button-bg;
+  border: 1px solid $button-bg;
+  color: $button-color;
+  cursor: pointer;
+  margin-bottom: $space;
+  outline: none;
+  padding: $space;
+  text-align: center;
+
+  &:active {
+    transform: translateY(.1rem);
+  }
+}
+
+.button--m-right {
+  margin-right: $space;
+}
+
+.button--icon {
+  background: $button-icon-bg;
+  border: 1px solid $button-icon-border-color;
+  border-radius: 50%;
+  color: $button-icon-color;
+  height: 1.8rem;
+  margin-bottom: 0;
+  padding: 0;
+  width: 1.8rem;
+}

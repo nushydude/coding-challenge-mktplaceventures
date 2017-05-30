@@ -1,0 +1,15 @@
+.category {
+  border: 1px solid $dark-grey;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $space;
+}
+
+.category__header {
+  background: $light-grey;
+  border-bottom: 1px solid $dark-grey;
+  padding: ($space / 2) $space;
+}
+
+.category__body {
+}

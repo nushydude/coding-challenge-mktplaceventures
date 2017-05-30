@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: $space / 2;
+
+  &:nth-child(even) {
+    background: $very-light-grey;
+  }
+}
+
+.item__contents {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  & p {
+    margin-bottom: 0;
+  }
+}
+
+.item__actions {
+  padding-left: $space * 3;
+}
