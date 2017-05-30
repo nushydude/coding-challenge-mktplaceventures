@@ -41,21 +41,6 @@ class ItemsList extends Component {
         funcRemoveItem={this.props.actionRemoveItem}
       />
     ));
-
-    /*
-    const itemsList = (
-      this.props.items.map(item => (
-        <div key={item.id}>
-          <p>{item.name}</p>
-          <p>{moment(item.timestamp).format('YYYY-MM-DD h:mm:ss a')}</p>
-          <button onClick={() => this.props.actionRemoveItem(item.id)}>
-            Remove
-          </button>
-        </div>
-      ))
-    );
-    */
-
     return itemsList;
   }
 

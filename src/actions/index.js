@@ -1,7 +1,7 @@
 import {
   FETCH_DATA,
   REMOVE_ITEM,
-  ADD_ITEM
+  ADD_ITEM,
 } from './types';
 
 import generateData from './../libs/generateData';
