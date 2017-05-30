@@ -4,7 +4,8 @@
   "scripts": {
     "start": "babel-node src/index.js",
     "lint": "eslint src/",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "app": "webpack-dev-server"
   },
   "author": "",
   "dependencies": {
@@ -17,16 +18,25 @@
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
     "babel-jest": "^20.0.3",
+    "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.3",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^7.0.1",
+    "html-webpack-plugin": "^2.28.0",
     "jest": "^20.0.3",
-    "regenerator-runtime": "^0.10.5"
+    "node-sass": "^4.5.3",
+    "regenerator-runtime": "^0.10.5",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
