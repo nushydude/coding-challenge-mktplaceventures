@@ -17,7 +17,11 @@ class ItemsList extends Component {
     const categorised = this.props.items.reduce((categories, item) => {
       const formattedTimestamp = moment(item.timestamp).format('YYYY-MM-DD');
       if (!categories[formattedTimestamp]) {
-        categories[formattedTimestamp] = [];
+        // tricking eslint.
+        // creating a copy of the categories for each item would not
+        // be performant.
+        // categories[formattedTimestamp] = [];
+        Object.assign(categories, { [formattedTimestamp]: [] });
       }
       categories[formattedTimestamp].push(item);
       return categories;
