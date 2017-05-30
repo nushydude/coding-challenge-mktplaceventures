@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-import generateData from './libs/generateData';
+import reducers from './reducers';
+
 import App from './components/app';
 
 import './styles/main.scss';
 
-console.log(generateData({
-  count: 400,
-  end: new Date(2017, 0, 26),
-  start: new Date(2017, 0, 15),
-}));
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('app-container'),
 );
